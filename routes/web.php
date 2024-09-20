@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OilController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return view('index');
+    return view('main');
 });
 
 Route::get('/dashboard', function () {
@@ -19,11 +20,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/about',[HomeController::class,'about'])->name('guest.about');
-Route::get('/contacts',[HomeController::class, 'contacts'])->name('guest.contacts');
+Route::get('/contact',[HomeController::class, 'contacts'])->name('guest.contacts');
+Route::get('/services',[HomeController::class, 'services'])->name('guest.services');
+Route::get('/home',[HomeController::class,'index'])->name('user.home');
+
+
+//OilController 
+Route::post('/search',[OilController::class,'search'])->name('oil.search');
 
 Route::middleware('is_admin')->group(function () {
-
-    Route::get()->name();
 });
 
 

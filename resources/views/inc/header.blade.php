@@ -1,79 +1,26 @@
-<header class="header">
+<header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-<div class="header_content">
-<div class="container">
-<div class="row">
-<div class="col">
-<div class="main_nav_container_outer d-flex flex-row align-items-end justify-content-center trans_400">
-<nav class="main_nav">
-<div class="main_nav_container d-flex flex-row align-items-center justify-content-lg-start justify-content-center">
-<div>
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Oil_X</h1>
+      </a>
 
-<div class="header_live">
-<a href="#">
-<div class="d-flex flex-row align-items-center justify-content-start">
-<div>live</div>
-<div>Lorem ipsum dolor sit amet, consectetur...</div>
-</div>
-</a>
-</div>
-<ul class="d-flex flex-row align-items-start justify-content-end">
-<li class="active"><a href="{{url('/')}}">home</a></li>
-<li><a href="{{route('guest.about')}}">about GARAGE</a></li>
-<li><a href="#">SERVICES</a></li>
-</ul>
-</div>
-<div class="logo_container text-center"><div class="trans_400"><a href="#"><img src="images/logo.png" alt></a></div></div>
-<div>
-<ul class="d-flex flex-row align-items-start justify-content-start">
-<li><a href="#">tickets</a></li>
-<li><a href="blog.html">news</a></li>
-<li><a href="contact.html">contact</a></li>
-</ul>
-</div>
-</div>
-</nav>
-<div class="hamburger">
-<i class="fa fa-bars trans_200"></i>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+       
+          <li><a href="#team">Team</a></li>
+      
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{route('login')}}">Login</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-<div class="header_bar">
-<div class="container">
-<div class="row">
-<div class="col">
-<div class="header_bar_content d-flex flex-row align-items-center justify-content-start">
-<div class="header_links">
-<ul class="d-flex flex-row align-items-start justify-content-start">
-<li><a href="#">GET Tickets</a></li>
-<li><a href="#">Shop</a></li>
-</ul>
-</div>
-<div class="header_bar_right ml-auto d-flex flex-row align-items-center justify-content-start">
 
-<div class="header_live">
-<a href="#">
-<div class="d-flex flex-row align-items-center justify-content-start">
-<div>live</div>
-<div>Lorem ipsum dolor sit amet, consectetur...</div>
-</div>
-</a>
-</div>
-
-<div class="user_area">
-<ul class="d-flex flex-row align-items-start justify-content-start">
-<li><a href="{{ route('register') }}">Sign up</a></li>
-<li><a href="{{ route('login')  }}">Sign in</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
+    </div>
+  </header>

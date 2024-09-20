@@ -13,4 +13,13 @@ class HomeController extends Controller
     public function contacts(){
         return view('includes/contacts');
     }
+
+    public function services(){
+        return view('user/sidebar');
+        
+    }
+
+    public function index(){
+        return view('user.index');
+    }
 }
