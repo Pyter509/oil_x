@@ -3,18 +3,23 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OilController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('main');
-
-Route::get('/dashboard', function () {
 })->name('jini');
 
 Route::get('/about',[HomeController::class,'about'])->name('guest.about');
 Route::get('/contact',[HomeController::class, 'contacts'])->name('guest.contacts');
 Route::get('/services',[HomeController::class, 'services'])->name('guest.services');
 Route::get('/home',[HomeController::class,'index'])->name('user.home');
+Route::get('/user/main',[HomeController::class,'main'])->name('user.main');
+Route::get('/user/history',[HomeController::class,'history'])->name('user.history');
+Route::get('/user/appointments',[HomeController::class,'appointments'])->name('user.appointments');
+Route::get('/user/profile',[HomeController::class,'profile'])->name('user.profile');
+Route::get('/user/ask',[HomeController::class,'oil'])->name('user.ask');
+
 Route::get('admin/home',[AdminController::class,'home'])->name('admin.home');
 Route::get('admin/manage',[AdminController::class,'manage'])->name('admin.manage');
 Route::get('admin/add',[AdminController::class,'add'])->name('admin.add');
