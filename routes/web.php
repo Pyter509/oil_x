@@ -7,6 +7,32 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('main');
+
+Route::get('/dashboard', function () {
+})->name('jini');
+
+Route::get('/about',[HomeController::class,'about'])->name('guest.about');
+Route::get('/contact',[HomeController::class, 'contacts'])->name('guest.contacts');
+Route::get('/services',[HomeController::class, 'services'])->name('guest.services');
+Route::get('/home',[HomeController::class,'index'])->name('user.home');
+Route::get('admin/home',[AdminController::class,'home'])->name('admin.home');
+Route::get('admin/manage',[AdminController::class,'manage'])->name('admin.manage');
+Route::get('admin/add',[AdminController::class,'add'])->name('admin.add');
+
+Route::get('admin/customers',[AdminController::class,'customers'])->name('admin.customers');
+Route::get('admin/appointments',[AdminController::class,'appointments'])->name('admin.appointments');
+Route::get('admin/payments',[AdminController::class,'payee'])->name('admin.payee');
+
+
+
+//OilController 
+Route::post('/search',[OilController::class,'search'])->name('oil.search');
+Route::post('/oil/edit',[OilController::class,'edit'])->name('oil.edit');
+
+Route::post('/oil/destroy',[OilController::class,'destroy'])->name('oil.destroy');
+
+
+Route::middleware('guest')->group(function () {
 });
 
 Route::get('/dashboard', function () {
@@ -19,17 +45,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/about',[HomeController::class,'about'])->name('guest.about');
-Route::get('/contact',[HomeController::class, 'contacts'])->name('guest.contacts');
-Route::get('/services',[HomeController::class, 'services'])->name('guest.services');
-Route::get('/home',[HomeController::class,'index'])->name('user.home');
-
-
-//OilController 
-Route::post('/search',[OilController::class,'search'])->name('oil.search');
-
-Route::middleware('is_admin')->group(function () {
-});
-
-
 require __DIR__.'/auth.php';
+
