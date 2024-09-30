@@ -19,6 +19,9 @@ Route::get('/user/history',[HomeController::class,'history'])->name('user.histor
 Route::get('/user/appointments',[HomeController::class,'appointments'])->name('user.appointments');
 Route::get('/user/profile',[HomeController::class,'profile'])->name('user.profile');
 Route::get('/user/ask',[HomeController::class,'oil'])->name('user.ask');
+Route::get('/user/book',[HomeController::class,'book'])->name('user.book');
+
+
 
 Route::get('admin/home',[AdminController::class,'home'])->name('admin.home');
 Route::get('admin/manage',[AdminController::class,'manage'])->name('admin.manage');

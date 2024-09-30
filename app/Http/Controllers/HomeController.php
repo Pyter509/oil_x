@@ -71,5 +71,8 @@ class HomeController extends Controller
     public function appointments(){
         return view('user.appointments');
     }
+    public function book(){
+        return view('user.book');
+    }
     
 }

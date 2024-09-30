@@ -52,8 +52,8 @@ class AdminController extends Controller
 
     public function customers(){
         $customer=User::all();
-        dd($customer);
-        return view('admin/customers');
+       
+        return view('admin/customers',compact('customer'));
     }
 
     public function appointments(){
